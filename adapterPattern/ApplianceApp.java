@@ -2,28 +2,20 @@ package adapterPattern;
 
 public class ApplianceApp {
 
-    public static void main(String[] args){
+    public static void main(String[] args)
+    {
+        Laptop laptop = new Laptop();
+        PowerOutlet lapTop = new LaptopAdapter (laptop);
 
-        Tv tv = new Tv();
-        RemoteControllerFunction tvRc = new TvAdapter(tv);
+        Refrigerator refrigerator = new Refrigerator();
+        PowerOutlet refriGerator = new RefrigeratorAdapter (refrigerator);
 
-        AirCon airCon = new AirCon();
-        RemoteControllerFunction airConRc = new AirconAdapter(airCon);
-
-        Speaker speaker = new Speaker();
-        RemoteControllerFunction speakerRc = new SpeakerAdapter(speaker);
-
-        //turn on the appliances
-        System.out.println(tvRc.powerOn());
-        System.out.println(airConRc.powerOn());
-        System.out.println(speakerRc.powerOn());
+        SmartphoneCharger smartphoneCharger = new SmartphoneCharger();
+        PowerOutlet smartPhoneCharger = new SmartPhoneAdapter (smartphoneCharger);
 
         System.out.println();
-
-        //press button up
-        System.out.println(tvRc.pressPlusButton());
-        System.out.println(airConRc.pressPlusButton());
-        System.out.println(speakerRc.pressPlusButton());
-
+        System.out.println(lapTop.plugIn());
+        System.out.println(refriGerator.plugIn());
+        System.out.println(smartPhoneCharger.plugIn());
     }
 }
