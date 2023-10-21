@@ -28,3 +28,4 @@ SmartphoneAdapter - An adapter for plugging a smartphone charger into a standard
 
 
 
+
